@@ -50,12 +50,10 @@ button.addEventListener(
           console.log("wordSelect[j]", wordSelect[j]);
           console.log("guessLower", guessLower);
           console.log("result ", wordSelect[j] == guessLower);
-          answerArray[j] = guessLower;
-          if (answerArray.includes("_") && answerArray[j] == guessLower) {
+          if (answerArray[j] != guessLower) {
             remainLetters--;
-
-            continue;
           }
+          answerArray[j] = guessLower;
         }
       }
       wordField.textContent = answerArray.join(" ");
@@ -68,8 +66,9 @@ button.addEventListener(
         img.src = `image${counter}.jpg`;
       }
     }
-    if (remainLetters == 1) {
+    if (remainLetters == 0) {
       winLose.textContent = "Congrats! You guessed the word " + wordSelect;
+      this.removeEventListener("click", gallows);
     } else if (attemptsLimit == 0) {
       winLose.textContent = "You lost! Good luck next time!";
       button.disabled = true;
@@ -80,3 +79,4 @@ button.addEventListener(
 );
 
 // while (remainLetters > 0 && attemptsLimit != 0 && answerArray.includes("_")) {
+
