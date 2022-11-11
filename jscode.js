@@ -62,7 +62,7 @@ button.addEventListener(
         attemptsLimit = attemptsLimit - 1;
         counter += 1;
         attemptsLimitNotifier.textContent =
-          "Осталось попыток: " + attemptsLimit;
+          "Attempts remaining: " + attemptsLimit;
         img.src = `image${counter}.jpg`;
       }
     }
