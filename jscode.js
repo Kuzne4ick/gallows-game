@@ -1,15 +1,15 @@
 const wordsList = [
-  "программа",
-  "макака",
-  "прекрасный",
-  "оладушек",
-  "компьютер",
-  "кровать",
-  "квартира",
+  "elaborate",
+  "technology",
+  "beautiful",
+  "cracker",
+  "computer",
+  "taxi",
+  "building",
 ];
 
 const wordSelect = wordsList[Math.floor(Math.random() * wordsList.length)];
-console.log(wordSelect);
+
 const button = document.querySelector("#submit");
 let guess;
 let wordField = document.querySelector("#word");
@@ -20,7 +20,7 @@ let answerArray = [];
 let counter = 1;
 let img = document.querySelector(".image");
 let attemptsLimit = 5;
-attemptsLimitNotifier.textContent = "Осталось попыток: " + attemptsLimit;
+attemptsLimitNotifier.textContent = "Attempts remaining: " + attemptsLimit;
 console.log(answerArray);
 let remainLetters = wordSelect.length;
 for (let i = 0; i < wordSelect.length; i++) {
@@ -31,7 +31,7 @@ wordField.textContent = answerArray.join(" ");
 button.addEventListener(
   "click",
   function gallows() {
-    attemptsLimitNotifier.textContent = "Осталось попыток: " + attemptsLimit;
+    attemptsLimitNotifier.textContent = "Attempts remaining: " + attemptsLimit;
     guess = document.querySelector("#guess").value;
     console.log("attempts", attemptsLimit);
     console.log(guess, "guess");
@@ -39,10 +39,10 @@ button.addEventListener(
 
     let guessLower = guess.toLowerCase();
     if (guess == "") {
-      message.textContent = "вы ничего не ввели";
+      message.textContent = "You didn't enter anything";
       return;
     } else if (guessLower.length > 1) {
-      message.textContent = "Вы ввели больше одной буквы!";
+      message.textContent = "You entered more than one letter!";
     } else {
       message.textContent = "";
       for (let j = 0; j < wordSelect.length; j++) {
@@ -69,9 +69,9 @@ button.addEventListener(
       }
     }
     if (remainLetters == 1) {
-      winLose.textContent = "Победа! Вы угадали слово " + wordSelect;
+      winLose.textContent = "Congrats! You guessed the word " + wordSelect;
     } else if (attemptsLimit == 0) {
-      winLose.textContent = "Вы проиграли!";
+      winLose.textContent = "You lost! Good luck next time!";
       button.disabled = true;
       this.removeEventListener("click", gallows);
     }
