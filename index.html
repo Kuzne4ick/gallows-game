@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>Виселица</h1>
+    <h2>Правила</h2>
+    <p>Загадано слово. Ваша задача угадать его, вводя по одной букве. Если вы неправильно угадали 6 раз то вы проиграли.
+      <br>
+      Также будут отображаться буквы, которые вы угадали и места в слове, где они расположены
+    </p>
+  </header>
+  <div class="game">
+
+    <img src="public/image1.jpg" alt="gallows" class="image">
+
+
+    <div id="message"></div>
+    <div id="attempts"></div>
+    <div id="word"></div>
+    <input type="text" id="guess" />
+    <input id="submit" type="submit" value="Ввод" />
+    <div id="victory-lose-notify"></div>
+    <script src="jscode.js"></script>
+  </div>
+</body>
+
+</html>
