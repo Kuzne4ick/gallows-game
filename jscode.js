@@ -75,8 +75,7 @@ button.addEventListener(
       this.removeEventListener("click", gallows);
     }
   }
-  // console.log(document.querySelector("#guess").value);
+
 );
 
-// while (remainLetters > 0 && attemptsLimit != 0 && answerArray.includes("_")) {
 
